@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{width: 50px;height: 50px;display: inline-block;border: 1px solid #000;background-size: 1000px 600px;position: absolute;}
+		</style>
+	</head>
+	<body>
+		
+		<script type="text/javascript">
+			for (var i =0;i<220;i++) {
+				document.body.innerHTML += '<div style="left: '+ (i%20)*55 +'px;top: '+(parseInt(i/20)*55) +'px;background-position: -'+(i%20)*55 +'px -'+ (parseInt(i/20)*55) +'px;"></div>'
+			}
+			var divs = document.querySelectorAll("div");
+			for(var i=0;i<divs.length;i++){
+				divs[i].onmouseover = function  () {
+					this.style.backgroundImage = 'url(img/16.jpg)';
+				}
+			}
+		</script>
+	</body>
+</html>

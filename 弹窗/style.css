@@ -1,0 +1,16 @@
+*{margin: 0;padding: 0;}
+body{background: #DE4A63;}
+.container{width: 300px;margin: 100px auto;}
+.container .logo{text-align: center;}
+.container .btnBox{text-align: center;margin-top: 20px;}
+.container #btn{width: 80px;line-height: 30px;background: #55BCE4;border: 1px solid #fff;text-align: center;outline: none;color: #fff;border-radius: 20px;cursor: pointer;}
+
+#mark{position: absolute;left: 0;top: 0;width: 100%;height: 100%;background: rgba(0,0,0,0.3);z-index: 1;}
+#sureBtn{position: absolute;z-index: 2;width: 200px;border: 1px solid #fff;color: #fff;padding: 5px 10px;background: rgba(0,0,0,0.5);padding-bottom: 40px;}
+#sureBtn .close{text-align: right;}
+#sureBtn .close span{display: inline-block;cursor: pointer;}
+#sureBtn .text{text-align: center;margin-top:20px;}
+#sureBtn .text p{line-height: 50px;}
+#sureBtn .text p.i{color: #DE4A63;font-size: 14px;}
+#sureBtn .btn {margin-top: 20px;text-align: center;}
+#sureBtn .btn input{width: 80px;line-height: 30px;background: #55BCE4;border: 1px solid #fff;text-align: center;outline: none;color: #fff;border-radius: 20px;cursor: pointer;}

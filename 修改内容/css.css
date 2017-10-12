@@ -1,0 +1,13 @@
+*{margin: 0;padding: 0;}
+li,ul{list-style: none;}
+body{font-family: "microsoft yahei";font-size: 12px;background: #b5d8ee;}
+.box{width: 440px;height: 235px;margin:200px auto;border-radius: 5px;}
+.box .title{background: #fff;text-align: center;border-top-left-radius: 5px;border-top-right-radius: 5px;}
+.lies_box{background: #321c1f;border-bottom-left-radius: 5px;border-bottom-right-radius: 5px;}
+.lies_box li{line-height: 45px;height: 45px;padding: 15px 20px;position: relative;color: #fff;}
+.lies_box li span{vertical-align: middle;}
+.lies_box li span img{vertical-align: middle;cursor: pointer;margin-left: 10px;}
+.change_box{position: absolute;width: 100%;height: 45px;z-index: 999;top: 15px;left: 20px;display: none;}
+.change_box .input_box{width: 250px;height: 35px;line-height: 35px;outline: none;border: 1px solid #de4a63;color: #000;text-indent: 10px;border-radius: 5px;}
+.change_box span{height: 35px;line-height: 35px;background: #de4a63;border-radius: 5px;color: #fff;display: inline-block;width: 60px;text-align: center;margin-left: 10px;cursor: pointer;}
+.line{border-bottom: 1px dashed #dedede;}

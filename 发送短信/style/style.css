@@ -1,0 +1,24 @@
+*{margin: 0;padding: 0;}
+body{font-family: "microsoft yahei";font-size: 14px;background: #9d94ba;}
+ul,li{list-style: none;}
+.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+.clearfix{*+height:1%;}
+.iphone{width: 340px;height: 650px;background: #e5e3ec;position: absolute;left: 50%;margin-left: -170px;top: 50%;margin-top: -325px;border-radius: 20px;box-shadow: 5px 5px 5px rgba(0,0,0,0.2);}
+.top-line{width: 55px;height: 5px;background: #979799;position: absolute;top: 20px;left: 50%;margin-left: -27px;border-radius: 5px;}
+.screen-box{width: 305px;height: 535px;margin: 40px 15px 0px 15px;border: 2px solid #a6a5ad;background: #fff;}
+.home-btn{text-align: center;margin-top: 5px;}
+.mas-box{height: 455px;padding: 20px 20px 0px 20px;overflow: auto;}
+.send-box{background: #e3e3e3;height: 60px;line-height: 60px;padding: 0px 10px;}
+.send-box .head{display: inline-block;vertical-align: top;}
+.send-box #head-img{margin-top: 10px;cursor: pointer;}
+#content{height: 40px;background: #fff;border-radius: 5px;border: none;outline: none;font-family: "microsoft yahei";font-size: 16px;padding-left: 10px;margin-left: 10px;}
+#send{color: red;font-size: 16px;margin-left: 10px;display: inline-block;cursor: pointer;}
+.mas-box ul li{margin-bottom: 10px;}
+.left{position: relative;}
+.left .mas_content{background: #e1e1e1;padding:10px 15px;color: #000;margin-left: 50px;margin-top: 5px;display: inline-block;font-size: 14px;position: relative;border-radius: 5px;line-height: 25px;word-break: break-all;}
+.left .head_img{position: absolute;top: 0px;left: 0px;}
+.left .icon{background: url(../img/left.png) no-repeat;display: inline-block;width: 5px;height: 10px;position: absolute;left: -5px;top: 13px;}
+.right{position: relative;}
+.right .mas_content{background: #b2a9c8;padding:10px 15px;color: #fff;margin-right: 50px;margin-top: 5px;display: inline-block;font-size: 14px;position: relative;border-radius: 5px;line-height: 25px;float: right;word-break: break-all;}
+.right .head_img{position: absolute;top: 0px;right: 0px;}
+.right .icon{background: url(../img/right.png) no-repeat;display: inline-block;width: 5px;height: 10px;position: absolute;right: -5px;top: 13px;}

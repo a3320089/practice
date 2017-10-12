@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{margin: 0;padding: 0;}
+			ul,li{list-style: none;}
+			ul.menu{width:100px;border: 1px solid #6CB9D4;display: block;position: absolute;display: none;}
+			li{line-height: 30px;font-size: 12px;text-indent: 10px;}
+			li:hover{background: #6CB9D4;cursor: pointer;color: #fff;}
+		</style>
+	</head>
+	<body>
+		<ul class="menu">
+			<li>下载</li>
+			<li>删除</li>
+			<li>移动到</li>
+			<li>重命名</li>
+		</ul>
+		<script type="text/javascript">
+			var menu = document.getElementsByTagName('ul')[0];
+			document.oncontextmenu = function (e) {
+				var e = e||window.event;
+				menu.style.display = 'block';
+				menu.style.left = e.clientX + 'px';
+				menu.style.top = e.clientY + 'px';
+				return false;
+			}
+			document.onclick = function () {
+				menu.style.display = 'none';
+			}
+			
+		</script>
+	</body>
+</html>

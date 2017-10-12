@@ -1,0 +1,15 @@
+*{margin: 0;padding: 0;}
+body{background: #e8e87c;}
+ul,li{list-style: none;}
+.banner{position: relative;width: 960px;height: 402px;margin: 200px auto;box-shadow: 5px 5px 5px rgba(0,0,0,0.3);overflow: hidden;}
+.banner .imgBox li{position: absolute;left: 0px;top: 0px;display: block;opacity: 1;}
+.banner .btn{font-size: 40px;color: #fff;position: absolute;display: block;width: 30px;height: 50px;top: 50%;margin-top: -40px;z-index: 9999;text-align: center;line-height: 50px;cursor: pointer;opacity: 0.5;}
+.banner .btn:hover{opacity: 1;}
+.banner .leftBtn{left: 0px;}
+.banner .rightBtn{right: 0px;}
+.hoverLi{background: #fff;height: 48px;position: absolute;bottom: 0px;width: 100%;text-align: center;line-height: 48px;}
+.hoverLi li{width: 12px;height: 12px;background: #dedede;border-radius: 50%;display: inline-block;margin: 0px 5px;cursor: pointer;position: relative;}
+.hoverLi li.cur{background: #2468e8;}
+.hoverLi .smallImg{display: none;}
+.hoverLi img{width: 100px;height: 42px;position: absolute;top: -55px;left: -42px;border: 2px solid #000;}
+.hoverLi .icon{width: 10px;height: 5px;background: url(img/down.jpg) no-repeat center center;background-size: 10px 5px;display: block;position: absolute;top: -9px;left: 1px;}

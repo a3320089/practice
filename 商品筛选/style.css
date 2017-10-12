@@ -1,0 +1,11 @@
+.container{background: url(img/bg.png);width: 1000px;height: 500px;margin: 100px auto;}
+#box{width: 800px;margin: 0 auto;}
+.title{text-align: center;padding: 50px;}
+.item{background: #fff;line-height: 30px;font-size: 12px;padding: 5px 20px;color: #a2a0a0;}
+.item span{display: inline-block;padding: 0px 10px;color: #000;cursor: pointer;}
+.item span.cur,.item span:hover{color: #00BFFF;}
+.item.chose{color: #000000;background: rgba(255,255,255,0.5);}
+#yourChose{display: inline-block;}
+#yourChose span{padding:2px 2px;border: 1px solid #00BFFF;color: #00BFFF;line-height: 20px;margin: 0px 5px;}
+#yourChose span img{vertical-align: middle;margin-left: 5px;}
+#yourChose span a{margin-left: 5px;}

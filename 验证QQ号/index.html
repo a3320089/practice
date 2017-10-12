@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		请输入QQ号：<input type="text" id="text" /><input type="button" name="btn" id="btn" value="验证" />
+		<div id="tip"></div>
+		<script type="text/javascript">
+			var input_text = document.getElementById("text"),
+				btn = document.getElementById("btn"),
+				tip = document.getElementById("tip");
+				
+				btn.onclick = function  () {
+					var text_value = input_text.value;
+					if(isNaN(Number(text_value))){
+						tip.innerHTML = "请输入纯数字";
+					}else if(text_value.charAt(0) == '0'){
+						tip.innerHTML = "不能以0开头";
+					}else if (text_value.length<5 || text_value.length>10) {
+						tip.innerHTML = "输入的数字必须是5位以上，10位以内";
+					}else{
+						tip.innerHTML = "验证成功";
+					}
+				}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,8 @@
+*{margin: 0;padding: 0;}
+body{background: #d04c71;}
+.box{margin: 100px auto;width: 920px;}
+.title{color: #fff;text-align: center;font-size: 19px;letter-spacing: 5px;margin-bottom: 100px;}
+.imgBox{position: relative;display: inline-block;font-size: 0;margin: 10px;}
+.imgBox img{border-radius: 50%;border: 3px solid #fff;width: 200px;height: 200px;}
+.icon{position: absolute;width: 40px;height: 40px;background: url(img/icon.png) no-repeat center center;cursor: pointer;left: 50%;margin-left: -20px;top: -20px;color: #da7f8f;text-align: center;font-size: 14px;line-height: 37px;font-family: "microsoft yahei";font-weight: 500;-moz-user-select: none;-webkit-user-select: none;}
+.hide_icon{position: absolute;width: 20px;height:20px;background: url(img/icon.png) no-repeat center center;;left: 50%;margin-left: -10px;top: -35px;background-size: 20px 20px;opacity: 0;}

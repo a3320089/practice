@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>九九乘法表</title>
+		<style type="text/css">
+			span{display: inline-block;width: 100px;height: 30px;line-height: 30px;background:yellow;margin: 5px;text-indent: 25px;}
+		</style>
+	</head>
+	<body>
+		<script type="text/javascript">
+			for (var i=9;i>0;i--) {
+				for (var j=1;j<i+1;j++) {
+					document.body.innerHTML += '<span>'+ j+'x'+i +"="+i*j +'</span>'; 
+				}
+				document.body.innerHTML += "<br>";
+			}
+			
+			for(var a = 0;a<5;a++){
+				document.body.innerHTML += "<br>";
+			}
+			
+			for (var i=1;i<10;i++) {
+				for (var j=1;j<=i;j++) {
+					document.body.innerHTML += '<span>'+ j+'x'+i +"="+i*j +'</span>'; 
+				}
+				document.body.innerHTML += "<br>";
+			}
+		</script>
+	</body>
+</html>

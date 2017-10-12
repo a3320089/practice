@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body style="height: 2000px;">
+		<input type="button" name="" id="" value="0" />
+		<script type="text/javascript">
+			function MouseScroll (obj,Down,Up) {
+				obj.onmousewheel = function (e) {
+					var e = e||window.event;
+					if (e.wheelDelta<0) {
+						Down&&Down.call(obj,e)
+					}
+					if (e.wheelDelta>0) {
+						Up&&Up.call(obj,e)
+					}
+					e.preventDefault()
+				}
+				obj.addEventListener('DOMMouseScroll',function (e) {
+					var e = e||window.event;
+					if (e.wheelDelta<0) {
+						Up&&Up.call(obj,e)
+					}
+					if (e.wheelDelta>0) {
+						Down&&Down.call(obj,e)
+					}
+					e.preventDefault()
+				},false)
+			}
+			var input = document.getElementsByTagName('input')[0];
+			MouseScroll(input,function (e) {
+				var num = Number(this.value);
+				this.value = --num;
+			},function (e) {
+				var num = Number(this.value);
+				this.value = ++num;
+			})
+		</script>
+	</body>
+</html>

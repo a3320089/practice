@@ -1,0 +1,10 @@
+*{margin: 0;padding: 0;}
+body{font-family: "microsoft yahei";}
+li,ul{list-style: none;}
+.listBox{width: 304px;height: 350px;margin:  100px auto;}
+.title{font-size: 0;}
+.title li{display: inline-block;font-size: 12px;line-height: 30px;text-align: center;width: 100px;background: #fff;border: 1px solid #dedede;margin-right: -1px;cursor: pointer;}
+.title li.cur{background: #ffa535;color: #fff;border: 1px solid #ffa535;}
+.textBox{display: none;/*background: #ffa535;*/padding:10px;border: 1px solid #dedede;margin-top: -1px;}
+.textBox li{line-height: 50px;text-indent: 10px;color: #000;font-size: 12px;}
+.textBox li.cur{background: #ffa535;color: #fff;}

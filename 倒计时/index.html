@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var setTime = new Date(2017,7,18,10,36,12);
+			count();
+			function  count() {
+				var date = new Date();
+				var time = setTime.getTime() - date.getTime();
+				var d = parseInt(time/(24*60*60*1000));
+				var h = parseInt(time%86400000/(60*60*1000));
+				var m = parseInt(time%3600000/(60*1000));
+				var s = parseInt(time%60000/1000);
+				document.body.innerHTML = '距离到期时间还有：'+d+'天'+h+'小时'+m+'分'+s+'秒';
+			}
+			var timer = setInterval(function  () {
+				count()
+			},1000)
+		</script>
+	</body>
+</html>

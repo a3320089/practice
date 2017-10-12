@@ -1,0 +1,14 @@
+*{margin: 0;padding: 0;}
+ul,li{list-style: none;}
+body{font-family: "microsoft yahei";font-size: 14px;}
+textarea{width: 300px;height: 300px;padding: 20px;vertical-align: middle;}
+.btn{display: inline-block;width:90px;vertical-align: middle;}
+.btn span{display: inline-block;background: #45A7EC;text-align: center;padding: 10px;color: #fff;border-radius: 10px;cursor: pointer;}
+.btn p.num{text-align: center;margin-top: 10px;font-size: 12px;display: none;}
+.moveBox{width: 300px;height: 300px;padding: 20px;vertical-align: middle;display: inline-block;border: 1px solid #dedede;overflow: auto;}
+.box{width: 785px;margin: 100px auto;}
+.schedule{margin-top: 10px;font-size: 0;text-align: center;display: none;}
+.schedule li{width: 10px;height: 15px;background: #ccc;border: 1px solid #dedede;margin-left: -1px;display: inline-block;}
+.schedule li.cur{background: #FFFF00;border: 1px solid #FFFF00;}
+textarea:disabled{background: #fff;}
+.moveBtn{position: relative;}

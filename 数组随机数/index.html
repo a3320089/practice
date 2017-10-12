@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var arr = [];
+			
+			for (var i=0;i<10;i++) {
+				var num = Math.round(Math.random()*10 +10);
+				if (arrindexOf(arr,num) == -1) {
+					arr.push(num)
+				}else{
+					i--;
+				}
+			}
+			
+			function arrindexOf (arr,num,formIndex) {
+				formIndex = formIndex?formIndex:0;
+				for (var i = formIndex;i<arr.length;i++) {
+					if (arr[i] == num) {
+						return i;
+					}
+				}
+				return -1;
+			}
+			console.log(arr)
+		</script>
+	</body>
+</html>

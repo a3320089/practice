@@ -1,0 +1,13 @@
+*{margin: 0;padding: 0;}
+ul,li{list-style: none;}
+body{font-family: "microsoft yahei";font-size: 14px;background: #a695d1;}
+.container{width: 600px;margin: 100px auto;}
+.logo{text-align: center;}
+#box div{display: inline-block;vertical-align: middle;}
+#box div.box{background: #3c278b;width: 250px;height: 600px;}
+#box div.box li{color: #fff;line-height: 40px;cursor: pointer;padding: 0px 15px;margin-top: 5px;}
+#box div.btnBox{width: 90px;}
+#box div.box li:hover,#box div.box li.cur{background: #31216e;}
+.btnBox input{display: block;width: 90px;color: #fff;text-align: center;border: none;line-height: 40px;outline: none;cursor: pointer;margin-bottom: 20px;}
+#onleft{background: #01efd8;}
+#onright{background: #45a4fe;}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="index.css" />
+		<script src="mtween.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<div class="container">
+			<div class="logo">
+				<img src="img/logo.png" />
+			</div>
+			<div class="inputBox">
+				<div class="I-item">
+					姓名： <input type="text" id="name" value=""/>
+				</div>
+				<div class="I-item">
+					年龄： <input type="text" id="age" value=""/>
+				</div>
+				<div class="I-item">
+					性别：
+					<div id="sex">
+						<span>请选择性别</span>
+						<em></em>
+					</div>
+					<div id="sexoption">
+						<span>男</span><span>女</span><span>保密</span>
+					</div>
+				</div>
+				<div class="I-item">
+					<input type="button" name="add" id="add" value="添加" />
+				</div>
+			</div>
+			<div class="mesBox">
+				<table  cellspacing="0" cellpadding="0" id="tableBox">
+					<thead>
+						<th width="20%"><span id="allCheck" ></span>全选</th>
+						<th>ID</th>
+						<th>姓名</th>
+						<th>年龄</th>
+						<th>性别</th>
+						<th width="20%">操作 <a href="javascript:;" style="margin-left: 5px;color: #fff;text-decoration: none;" id="alldel">批量删除</a></th>
+					</thead>
+					<tbody>
+					<!--<tr>
+					<td><span class="check"></span></td>
+					<td>1</td>
+					<td>leo</td>
+					<td>32</td><td>男</td>
+					<td><img src="img/up.png"><img src="img/down.png"><img src="img/del.png"></td>
+					</tr>-->
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<script src="main.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

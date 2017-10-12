@@ -1,0 +1,32 @@
+*{margin: 0;padding: 0;}
+.container {width: 800px;height: 600px;background: #20242d;margin: 100px auto;border-radius: 10px;}
+.logo{padding: 20px;color: #fff;font-size: 18px;border-bottom: 1px solid #dedede;}
+.logo img{vertical-align: middle;}
+.logo a{font-size: 12px;color: #fff;text-decoration: none;}
+#list{width: 100px;float: left;padding-right: 20px;border-right: 1px solid #dedede;height: 520px;}
+#list a{color: #fff;text-decoration: none;display: block;text-align: right;padding-top:30px;font-size: 12px;}
+#list a.cur span{color: #FF0000;}
+
+#content{float: left;width: 679px;}
+#content a{color: #fff;display: block;text-decoration: none;padding: 20px 10px;}
+#content a:hover{background: #1c1e25;}
+#content a:hover div.id{border-left: 2px solid #FF0000;}
+#content a div{display: inline-block;vertical-align: middle;}
+#content a div.id{line-height: 40px;text-align: right;width: 50px;font-size: 25px;padding-right: 10px;border-right: 1px solid #fff;border-left: 2px solid transparent;}
+#content a div.textBox{width: 470px;font-size: 14px;padding-left: 10px;}
+#content a div.textBox p{width: 470px;height: 21px;overflow: hidden;line-height: 21px}
+#content a div.time{width: 100px;text-align: right;font-size: 14px;}
+
+#page{text-align: center;}
+#page a{color: #fff;padding: 0px 5px;text-decoration: none;font-size: 12px;}
+#page a.cur{color: #FF0000;}
+
+#Contentbox{padding: 30px 20px;}
+#Contentbox .title{color: #fff;font-size: 22px;}
+#Contentbox .mes{color: #fff;font-size: 14px;margin-top: 5px;}
+#Contentbox .mes span{padding: 0px 5px;}
+#Contentbox .mes .time{float: right;font-size: 12px;color: #dedede;}
+#Contentbox .conText{margin-top:40px;color: #fff;font-size: 16px;}
+#Contentbox .conText p{font-size: 14px;color: #ccc;line-height:30px;}
+
+#back{float: right;line-height: 40px;}

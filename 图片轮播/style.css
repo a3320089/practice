@@ -1,0 +1,8 @@
+*{margin: 0;padding: 0;}
+.banner{position: relative;width: 960px;height: 400px;margin: 150px auto;overflow: hidden;}
+.btn{position: absolute;top: 50%;height: 50px;line-height: 50px;width: 30px;color: #fff;text-align: center;z-index: 999;cursor: pointer;}
+.btn:hover{background: rgba(0,0,0,0.5);}
+#prev{left: 0px;}
+#next{right: 0px;}
+.imgBox{position: relative;}
+.imgBox img{position: absolute;transition: 0.5s;opacity: 0;}

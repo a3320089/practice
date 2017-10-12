@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<div class="text">
+			var arr = ['100px','abd'-6,[],-98765,34,-2,0,'300', ,function(){alert(1)},null,document,[],true,'200px'-30,'23.45元',5,Number('abc'),function(){alert(3);},'xyz'-90];
+		</div>
+		<div id="num">
+			所有的数字是：
+		</div>
+		<div id="canChangeNum">
+			可以转成数字的：
+		</div>
+		<div id="maxNum">
+			转成数字的最大值：
+		</div>
+		<div id="nanIndex">
+			所有运算结果是NaN的位置：
+		</div>
+		<div style="margin-top: 20px;">
+			<input type="button" name="find" id="find" value="点击查找" />
+		</div>
+		<script type="text/javascript">
+			//定义数组
+			var arr = ['100px', 'abd' - 6, [], -98765, 34, -2, 0, '300', , function() {alert(1)}, null, document, [], true, '200px' - 30, '23.45元', 5, Number('abc'), function() {alert(3);}, 'xyz' - 90];
+			//获取元素
+			var num = document.getElementById("num"),
+				canChangeNum = document.getElementById("canChangeNum"),
+				maxNum = document.getElementById("maxNum"),
+				find = document.getElementById("find"),
+				nanIndex = document.getElementById("nanIndex"),
+				max = 0;
+				
+			find.onclick = function() {
+				for(var i = 0; i < arr.length; i++) { 
+					console.log(arr[i])
+					if(!isNaN(arr[i]) && typeof arr[i] == "number") {//判断不是为NaN且是数字类型的时候
+						num.innerHTML += arr[i] + ',';
+					}
+					if(!isNaN(parseInt(arr[i]))) {//判断转换数字类型后不是NaN
+						//或者判断条件 parseInt(arr[i]) || parseInt(arr[i]) == 0   !isNaN(parseInt(arr[i]))
+						canChangeNum.innerHTML += arr[i] + ',';
+						if(parseInt(arr[i]) > max) { //判断如果转换后的数值比max大，则把大的数值赋值给max
+							max = parseInt(arr[i]);
+						}
+						maxNum.innerHTML = '转成数字的最大值：' + max;
+					}
+					if(typeof arr[i] == "number" && isNaN(arr[i])) {//转换为字符串类型后是否等于NaN,因为isNaN在这里做不了判断   
+						//或者String(arr[i]) == 'NaN'
+						nanIndex.innerHTML += i + ',';
+					}
+
+				}
+				
+				find.onclick = null;
+			}
+		</script>
+	</body>
+
+</html>

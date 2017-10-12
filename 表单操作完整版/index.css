@@ -1,0 +1,30 @@
+*{margin: 0;padding: 0;}
+body{background: #55bce4;}
+.container{width: 500px;margin: 100px auto;}
+.logo{text-align: center;}
+.inputBox{background: #fff;border-radius: 10px;margin-top: 30px;padding: 20px 20px 0px 20px;}
+.I-item{display: inline-block;width: 49%;margin-bottom: 20px;text-align: center;font-size: 14px;position: relative;}
+.I-item input,.I-item select,.I-item select option{width:150px;border: 1px solid #00BFFF;border-radius: 5px;height: 30px;line-height: 30px;outline: none;text-indent: 10px;color: #00BFFF;}
+.I-item #add{background: #00BFFF;color: #fff;width: 200px;}
+
+.mesBox{margin-top: 20px;}
+.mesBox table{width: 100%;}
+.mesBox table thead{color: #fff;background: #46b6e1;}
+.mesBox table thead th{font-size: 12px;font-weight: 400;text-align: center;height: 30px;}
+.mesBox table thead th:nth-child(1){text-align: left;text-indent: 20px;}
+#allCheck,.check{width: 12px;height: 12px;border: 1px solid #fff;display: inline-block;margin-right: 5px;vertical-align: middle;}
+#allCheck.cur,.check.cur{background: url(img/check.png) no-repeat center center;}
+
+.mesBox tbody .check{border:1px solid #00BFFF;}
+
+
+.mesBox tbody td{text-align: center;font-size: 12px;}
+.mesBox tbody tr td:nth-child(1){text-align: left;text-indent: 20px;}
+.mesBox tbody tr{background: #fff;border-radius: 5px;height: 30px;border-top: 2px solid #55bce4;}
+.mesBox tbody tr img{padding: 0px 10px;height: 12px;cursor: pointer;}
+.mesBox tbody a{cursor: pointer;}
+
+#sex{display: inline-block;width:150px;border: 1px solid #00BFFF;border-radius: 5px;height: 30px;line-height: 30px;outline: none;text-indent: 10px;color: #00BFFF;vertical-align: middle;cursor: pointer;position: relative;text-align: left;}
+#sex em{position: absolute;right: 5px;top: 12px;width: 0; height: 0; border-left: 5px solid transparent;border-right: 5px solid transparent;border-top:8px solid #00BFFF;}
+#sexoption span{display: inline-block;margin: 5px;cursor: pointer;color: #fff;}
+#sexoption{background: rgba(0,0,0,0.5);position: absolute;width: 150px;right: 15px;border-radius: 5px;overflow: hidden;height: 0px;}

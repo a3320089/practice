@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#container {
+				width: 600px;
+				height: 600px;
+				margin: 5px;
+				margin: 0 auto;
+			}
+			
+			#container div {
+				width: 50px;
+				height: 50px;
+				background: red;
+				float: left;
+				margin: 5px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="container">
+
+		</div>
+		<script type="text/javascript">
+			var container = document.getElementById("container");
+			for(var i = 0; i < 100; i++) {
+				container.innerHTML += '<div></div>';
+			}
+			var dives = container.getElementsByTagName('div');
+			var divArr = [];
+			for(var i = 0; i < 10; i++) {
+				var arr = [];
+				for(var j = 0; j < 10; j++) {
+					arr.push(dives[j + i * 10])
+				}
+				divArr.push(arr);
+			}
+			for(var i = 0; i < dives.length; i++) {
+				dives[i].index = i;
+				dives[i].onclick = function() {
+					var y = parseInt(this.index / 10);
+					var x = this.index % 10;
+					changeColor(divArr, y, x);
+				}
+			}
+
+			function changeColor(obj, y, x) {
+				obj[y][x].style.background = 'green';
+				obj[y][x].isChange = true;
+				setTimeout(function() {
+					if(y > 0 && !obj[y - 1][x].isChange) {
+						changeColor(divArr, y - 1, x);
+					}
+					if(y < 9 && !obj[y + 1][x].isChange) {
+						changeColor(divArr, y + 1, x);
+					}
+					if(x > 0 && !obj[y][x - 1].isChange) {
+						changeColor(divArr, y, x - 1);
+					}
+					if(x < 9 && !obj[y][x + 1].isChange) {
+						changeColor(divArr, y, x + 1);
+					}
+				}, 500)
+
+			}
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,10 @@
+*{margin: 0;padding: 0;}
+ul,li{list-style: none;}
+body{background: #ff8193;}
+.container{width: 300px;margin: 100px auto;}
+.logo{text-align: center;}
+.moveBox{margin-top: 20px;position: relative;}
+.moveBox li{background: #fff;padding:15px;border-radius: 10px;position: absolute;width: 100%;}
+.moveBox li span{padding-left: 15px;display: inline-block;border-left: 2px solid #ff8e9f;}
+.moveBox li a{float: right;margin-left: 10px;border: 1px solid #ff8e9f;text-decoration: none;color: #ff8e9f;padding:3px 5px;font-size: 12px;}
+.moveBox li a:hover{color: #fff;background: #FF8E9F;}

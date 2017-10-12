@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body{height:2000px ;}
+		</style>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var toTop = 0;
+			document.onclick = function () {
+				var scrollTop = window.pageXOffset || document.documentElement.scrollTop||document.body.scrollTop;
+				clearInterval(toTop);
+				toTop = setInterval(function () {
+					
+					scrollTop-=100;
+					if (scrollTop<=0) {
+						scrollTop = 0;
+						clearInterval(toTop)
+					}
+					
+					window.scrollTo(0,scrollTop);
+					
+				},30)
+			}
+		</script>
+	</body>
+</html>

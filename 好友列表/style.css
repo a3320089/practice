@@ -1,0 +1,20 @@
+*{margin: 0;padding: 0;}
+body{background: #7490d1;font-family: "microsoft yahei";font-size: 14px;}
+li,ul{list-style: none;}
+.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+.clearfix{*+height:1%;}
+.iphone{width: 360px;height: 680px;margin:100px auto;background: #000;border: 1px solid #dedede;border-radius: 20px;position: relative;}
+.iphone .tt{width: 80px;height: 5px;background: #fff;position: absolute;left: 50%;margin-left: -40px;top: 15px;border-radius: 5px;}
+.iphone .pm{background: #f1f1f1;width: 285px;height: 545px;margin:35px auto 0;padding: 15px 20px 0px;}
+.iphone .home{position: absolute;bottom: 15px;width: 50px;height: 50px;border: 2px solid #4F4949;border-radius: 50%;left: 50%;margin-left: -25px;}
+
+.first li{position: relative;line-height: 45px;background: #000;color: #fff;margin-bottom:10px ;cursor: pointer;}
+.first li .icon{width: 30px;height: 45px;display: inline-block;vertical-align: top;}
+.first .close .icon{background: url(close.png) no-repeat center center;}
+.first .open .icon{background: url(open.png) no-repeat center center;}
+.first .open{background: #aa455a;}
+.sec {display: none;position: relative;z-index: 999;}
+.sec a{text-indent: 30px;margin: 0px;display: block;height: 45px;line-height: 45px;background: #000;color: #Fff;text-decoration: none;}
+.sec a:hover{background:#636060;}
+.sec a.cur{background: #7a2c3a;}
+.sec.open{display: block;}

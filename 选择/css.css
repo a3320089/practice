@@ -1,0 +1,8 @@
+*{margin: 0;padding: 0;}
+ul,li{list-style: none;}
+.container{width: 300px;margin: 100px auto;background: #f8f8f8;padding: 5px;border-radius:20px;}
+#search{outline: none;width: 230px;border-radius: 20px;border: 1px solid #dedede;line-height: 30px;text-indent: 10px;}
+#submit{width: 60px;border-radius: 20px;outline: none;line-height: 30px;border: 1px solid #00A8FF;color: #fff;background:#00A8FF ;cursor: pointer;}
+/*.searchText{margin-top: 5px;}*/
+.searchText li{line-height: 30px;cursor: pointer;border-radius: 20px;padding: 0px 20px;width: 190px;display: none;}
+.searchText li:hover,.searchText li.cur{background: #00A8FF;color: #fff;}

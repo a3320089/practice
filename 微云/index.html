@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/css.css" />
+		<script src="js/data.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<!--头部-->
+		<div class="header">
+			<div class="logo bg"></div>
+			<div class="header_right_box">
+				<div class="bg order">
+					<i class="order_icon bg"></i>
+				</div>
+				<div class="header-search" id="searchBox">
+					<i class="sear-icon bg"></i>
+					<input type="text" name="searchBo" id="searchBo" placeholder="输入文件名" />
+					<a href="javascript:;" class="close-icon bg"></a>
+				</div>
+				<div class="hearder-mod-view">
+					<div class="view-item">
+						<a href="javascript:;" class="item-list cur">
+							<span class="bg icon1"></span>
+						</a>
+						<a href="javascript:;" class="item-list">
+							<span class="bg icon2"></span>
+						</a>
+					</div>
+					<div class="view-item">
+						<a href="javascript:;" class="item-list cur">
+							<span class="bg icon3"></span>
+						</a>
+						<a href="javascript:;" class="item-list">
+							<span class="bg icon4"></span>
+						</a>
+					</div>
+				</div>
+				<div class="header-mod-addFile">
+					<div class="addFile">
+						<a href="javascript:;" class="add-hover"><i class="bg"></i>添加</a>
+						<div class="addFile-drap">
+							<!--<i class="triangle-up"></i>-->
+							<ul>
+								<li>
+									<b class="bg icon1"></b>
+									<p>上传文件</p>
+								</li>
+								<li>
+									<b class="bg icon2"></b>
+									<p>上传文件夹</p>
+								</li>
+								<li>
+									<b class="bg icon3"></b>
+									<p>离线下载</p>
+								</li>
+								<li id="addFile">
+									<b class="bg icon4"></b>
+									<p>创建文件夹</p>
+								</li>
+								<li>
+									<b class="bg icon5"></b>
+									<p>添加笔记</p>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--
+        	作者：842644519@qq.com
+        	时间：2017-09-26
+        	描述：选中头部
+        -->
+
+		<div class="checkHeader">
+			<div class="logo bg">
+			</div>
+			<a href="javascript:;" id="clearChose">取消选择</a>
+			<div id="isChose">
+				已选中1项
+			</div>
+			<div class="mod-function">
+				<a href="javascript:;">分享</a>
+				<a href="javascript:;">下载</a>
+				<a href="javascript:;" id="headDel">删除</a>
+				<a href="javascript:;" id="moveTo">移动到</a>
+				<a href="javascript:;" id="rename">重命名</a>
+				<a href="javascript:;">移入保险箱</a>
+			</div>
+		</div>
+
+		<div id="main_left">
+			<div class="portrait">
+				<img src="img/g.jpg" />
+			</div>
+
+			<a href="javascript:;" class="mod-vip">开通会员</a>
+			<div class="mod-left-box">
+				<!--<div class="mod-left-body">
+					<a href="javascript:;" class="mod-lately"><i class="lately-icon bg"></i><span>最近</span></a>
+				</div>-->
+
+			</div>
+
+		</div>
+		<div id="main_right">
+			
+			<div id="noFile" style="display: block;">
+					 <img src="img/icon-nofile@2x.png"/>
+					 <p style="font-size: 24px;">暂无文件</p>
+					 <p>请点击右上角的“添加”按钮添加</p>
+				</div>
+			<div class="mod-place clearfix">
+				<div class="mod-check">
+					<span class="checkBtn" id="allCheck"></span>
+				</div>
+				<div class="mod-breadcrumb">
+					<!--<ul>
+						<li>
+							<a href="javascript:;">微云</a>
+						</li>
+						<li class="cur"><i class="icon-bread-next bg"></i>
+							<a href="javascript:;">网络硬盘收藏夹</a>
+						</li>
+					</ul>-->
+				</div>
+			</div>
+			<div class="mod-item-body mod-body clearfix">
+				
+				<!--<div class="mod-item">
+					<div class="mod-check">
+						<span class="checkBtn"></span>
+					</div>
+					<div class="item-box">
+						
+						<i class="icon-file bg"></i>
+						<span>QQ</span>
+						<span class="time">2017-12-15</span>
+						<input type="text" value="" />
+					</div>
+					<div class="operate">
+						<a href="javascript:;" class="bg icon-share"></a>
+						<a href="javascript:;" class="bg icon-down"></a>
+						<a href="javascript:;" class="bg icon-trash"></a>
+						<a href="javascript:;" class="bg icon-move"></a>
+						<a href="javascript:;" class="bg icon-rename"></a>
+						<a href="javascript:;" class="bg icon-add-safebox"></a>
+					</div>
+				</div>-->
+
+			</div>
+
+			<div class="mod-item-body2 mod-body" style="display: none;">
+				<ul>
+					<!--<li>
+						<a href="javascript:;">
+						<div class="mod-item">
+							<i class="icon-file bg"></i>
+							<span>QQ</span>
+						</div>
+						<i class="checkBtn"></i>
+						</a>
+					</li>
+				-->
+				</ul>
+				
+			</div>
+		</div>
+		<div id="dragChose">
+		</div>
+		<div id="contextMenu">
+			<ul>
+				<!--<li><a href="javascript:;">分享</a></li>
+				<li><a href="javascript:;">下载</a></li>
+				<li><a href="javascript:;">移动到</a></li>
+				<li><a href="javascript:;">重命名</a></li>
+				<li><a href="javascript:;">移入保险箱</a></li>
+				<li><a href="javascript:;">删除</a></li>-->
+				
+			</ul>
+		</div>
+		<div class="mod-msg">
+			<i class="bg"></i><span>新建文件夹成功</span>
+		</div>
+		<div id="drapDel">
+			13
+		</div>
+		<div id="mark">
+			
+		</div>
+		<div id="full-pop" >
+			<div class="pop-title">
+				<span>删除文件</span>
+				<a href="javascript:;" id="pop-close">×</a>
+			</div>
+			<div class="pop-text">
+				<p><i class="ico"></i><span>确定要删除这个文件吗？</span></p>
+				<p style="color: #868686;">已删除的文件可以在回收站找到</p>
+			</div>
+			<div class="pop-btns">
+				<span id="pop-sure" class="btn">确定</span>
+				<span id="pop-cancel" class="btn">取消</span>
+			</div>
+		</div>
+		
+		<div id="mod-moveFile">
+			<div class="moveFile-title">
+				<span>选择储存位置</span>
+				<a href="javascript:;" id="moveFile-close">×</a>
+			</div>
+			<div class="moveFile-text">
+				<div class="dirbox-file">
+					<i class="file_icon bg"></i><span>网络文件夹</span>
+				</div>
+				<div class="selsect-file">
+					<div class="file-breadcrumb">
+						<span>移动到：</span><span id="file-breadcrumb"></span>
+					</div>
+					<div class="select-box">
+						<ul>
+							<li>
+								<h2 class="open cur"><i class="icon_file"></i><span>微云</span></h2>
+								<ul>
+									<li><h2 ><i class="icon_file"></i><span>微云</span></h2></li>
+									<li><h2 ><i class="icon_file"></i><span>微云</span></h2></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="err-text" style="color: #FF0000;padding: 0px  20px 20px 20px;display: none;">不能移动到自身及其子集里</div>
+			<div class="moveFile-btns">
+				<span id="moveFile-sure" class="btn">确定</span>
+				<span id="moveFile-cancel" class="btn">取消</span>
+			</div>
+		</div>
+		
+		<script src="js/mtween.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/fn.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/html.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/main.js" type="text/javascript" charset="utf-8"></script>
+		
+	</body>
+
+</html>

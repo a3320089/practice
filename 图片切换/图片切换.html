@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>图片切换</title>
+		<link rel="stylesheet" type="text/css" href="style/style.css"/>
+	</head>
+	<body>
+		<div class="banner">
+			<!--切换效果按钮-->
+			<div class="change_box">
+				<ul>
+					<li class="cur" id="loop">循环切换</li>
+					<li  id="sx">顺序切换</li>
+				</ul>
+			</div>
+			<!--功能说明-->
+			<div id="exp">
+				可以从最后一张切换到第一张的循环切换
+			</div>
+			<!--图片框架-->
+			<div class="img-box clearfix">
+				<!--图片框架-->
+				<ul class="clearfix">
+					<li>
+						<p class="num"><span id="num"></span>/<span id="max"></span></p>
+						<img src="img/0.jpg" id="Img"/>
+						<p class="text" id="text">文字描述一</p>
+					</li>
+				</ul>
+				<!--左右按钮-->
+				<span id="left" class="btn"><</span>
+				<span id="right" class="btn">></span>
+				<!--提示-->
+				<div class="ts" id="ts">
+					<div class="close_icon" id="close"></div>
+					<p class="jst">Javascript提醒</p>
+					<p class="tsm" id="tsm">已经到第一张啦~</p>
+					<p><input type="button" name="sure" id="sure" value="确认" /></p>
+				</div>
+			</div>
+			
+		</div>
+
+		<script src="js/main.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>

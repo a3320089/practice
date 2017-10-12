@@ -1,0 +1,27 @@
+*{margin: 0;padding: 0;}
+body{font-family: "microsoft yahei";}
+ul,li{list-style: none;}
+.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+.clearfix{*+height:1%;}
+.banner{position: absolute;width: 600px;top: 100px;left: 50%;margin-left: -300px;background: #000;}
+.change_box{padding: 15px 0px;}
+.change_box ul{font-size: 0;width: 100%;text-align: center;}
+.change_box li{color:#fff ;border: 1px solid #fff;padding: 5px 30px;display: inline-block;font-size: 16px;cursor: pointer;}
+.change_box li.cur{background: #fff;color: #000;border: 1px solid #fff;}
+
+.img-box{padding:0px 10px 10px ;position: relative;background: #000;}
+.img-box li{width: 100%;position: relative;}
+.img-box li p.text{text-align: center;color: #fff;position: absolute;width: 100%;height: 30px;line-height: 30px;bottom: 4px;background: rgba(0,0,0,0.5);text-align: center;display: block;}
+.img-box li p.num{text-align: center;color: #fff;position: absolute;width: 100%;font-size:18px;font-family:sans-serif}
+.img-box li img{width: 100%;height: 580px;}
+#exp{color: #dedede;text-align: center;margin-bottom: 15px;}
+.btn{width: 35px;height: 70px;color: #fff;position: absolute;top: 50%;margin-top: -18px;font-size: 50px;display: inline-block;cursor: pointer;text-align: center;}
+.btn:hover{background: rgba(0,0,0,0.5);}
+#left{left: 20px;}
+#right{right: 20px;}
+.ts{position: absolute;width: 280px;height: 130px;background: rgba(0,0,0,0.5);border: 1px solid #dedede;top: 50%;margin-top: -125px;left: 50%;margin-left: -150px;padding: 10px;display: none;z-index: 999;}
+.ts .close_icon{background: url(../img/close.png) no-repeat;width: 11px;height: 11px;float: right;cursor: pointer;}
+.ts .jst{color: #fff;font-size: 22px;margin-top: 10px;}
+.ts .tsm{color: #dedede;color: #14;}
+.ts p{padding: 5px 0px;text-align: center;}
+.ts #sure{border: 1px solid #fff;outline: none;background: rgba(0,0,0,0.5);color: #fff;padding: 7px 30px;margin-top: 5px;cursor: pointer;}

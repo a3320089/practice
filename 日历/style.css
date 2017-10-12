@@ -1,0 +1,17 @@
+*{margin: 0;padding: 0;}
+div.d{margin: 0;padding: 0px;margin-left: -1;width: 50px;height: 50px;text-align: center;line-height: 50px;float: left;border: 1px solid transparent;cursor: default;}
+div.d:hover{color: red;border:1px solid red;border-radius: 50%;}
+.red{color: red;}
+.box{width: 364px;float: left;margin-right: 20px;}
+.box div.none{width: 52px;height: 52px;float: left;}
+.calendar{width: 364px;margin: 100px auto;border: 1px solid #dedede;padding: 20px;overflow: hidden;}
+.calendar span{display: inline-block;}
+.change{float: right;}
+.title{height: 50px;line-height: 50px;}
+li,ul{list-style: none;}
+.btn{cursor: pointer;padding: 0px 5px;display: inline-block;-moz-user-select: none;-ms-user-select: none;-webkit-user-select: none;}
+.week:after{content: '';clear: both;display: block;height: 0;}
+.week li{width: 52px;float: left;text-align: center;height: 52px;line-height: 52px;}
+.now_time{font-size: 25px;font-family: "microsoft yahei";border-bottom: 1px solid #dedede;height: 50px;}
+.dateBox{width: 1152px;margin-left: -384px;}
+.dateBox:after{content: '';clear: both;display: block;height: 0;}

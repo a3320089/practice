@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#scrollBox {
+				position: relative;
+				width: 10px;
+				display: inline-block;
+				vertical-align: top;
+			}
+			
+			#scroll {
+				width: 5px;
+				height: 100px;
+				position: absolute;
+				left: 3px;
+				background: #000;
+			}
+			
+			#textBox {
+				display: inline-block;
+				width: 300px;
+				height: 400px;
+				position: relative;
+				overflow: hidden;
+				border: 1px solid #000000;
+				vertical-align: top;
+			}
+			
+			#textscroll {
+				position: absolute;
+				width: 100%;
+			}
+		</style>
+	</head>
+
+	<body style="height: 2000px;">
+		<div id="scrollBox">
+			<div id="scroll">
+
+			</div>
+		</div>
+		<div id="textBox">
+			<div id="textscroll">
+			赵蕊蕊 最近，前女排国手女神的赵蕊蕊曝出自己近照，虽然已经36岁没有受过爱情的滋润，但却依然水嫩如二十几岁的女生。曾与姚明绯闻不断的她，在谈及择偶标准的时候她显得十分着急。 第十三届全运会上，江苏女排成为最后的赢家，惠若琪和张常宁收获一枚金牌们再一次成为了焦点。自从2016年里约奥运会夺冠后，朱婷、魏秋月等这些女排姑娘的名字就进入了球迷的视野。然而更多人忘记了老一辈的女排姑娘。 近照 1981年出生赵蕊蕊，素有“中国第一高”之称，也是出生于江苏南京。前几天，赵蕊蕊就在微博秀出了与老队友杨昊、王一梅、张娜等人的合影，感慨时光过得匆匆，更感慨的是，自己已经36岁却因为1米97“高人一等”的身高至今仍单身。 从小练习排球的赵蕊蕊，18岁就加入国家队，成为女排雅典夺冠的主力阵容球员，一度被誉为世界上最好的副攻球员，但也是因为“玻璃美人”的称号，职业生涯遭遇了太多的伤病，直到08年北京奥运会帮助国家队拿下铜牌之后，赵蕊蕊就退出了排坛。 现在已经退役的她，最关心的则是自己的感情生活。因为36岁成为“排球界的黄金剩女”。曾经就因为和姚明一张擦肩而过的照片引起了热议。 郎平与赵蕊蕊 就连曾经作为她教练的郎平也是为赵蕊蕊发话：“别灰心呀！你才多大呀。小姑娘的想追你的男孩都在后面排队呢！” 在谈及择偶方面的时候，赵蕊蕊也表示自己的身高是一个障碍：“身高还是要在1.9米以上。只要有共同爱好和话题就可以了。当然，喜欢排球的优先。”然而，很多网友都表示：这样的话，只能“就近原则”，在男排或男篮里找对象吧！ 虽然没有爱情滋润，但是赵蕊蕊还是活的十分精彩，转型做作家出书，但依然是皮肤水嫩，特别是这大长腿十分抢眼！ 最后也祝福这位女排美女能找到心仪的另一半。 查看原文 >>
+			</div>
+
+		</div>
+		<script type="text/javascript">
+			function MouseScroll(obj, Down, Up) {
+				obj.onmousewheel = function(e) {
+					var e = e || window.event;
+					if(e.wheelDelta < 0) {
+						Down && Down.call(obj, e)
+					}
+					if(e.wheelDelta > 0) {
+						Up && Up.call(obj, e)
+					}
+					e.preventDefault()
+				}
+				obj.addEventListener('DOMMouseScroll', function(e) {
+					var e = e || window.event;
+					if(e.wheelDelta < 0) {
+						Up && Up.call(obj, e)
+					}
+					if(e.wheelDelta > 0) {
+						Down && Down.call(obj, e)
+					}
+					e.preventDefault()
+				}, false)
+			}
+			var scroll = document.getElementById("scroll");
+			var textBox = document.getElementById("textBox");
+			var textscroll = document.getElementById("textscroll");
+			var height = 100000/textscroll.offsetHeight;
+			if(height<30)height = 30;
+			scroll.style.height = height+'px';
+			scroll.onmousedown = function(e) {
+				var e = e || window.event;
+				var divY = e.clientY - this.offsetTop;
+				if(this.setCapture) {
+					this.setCapture();
+				}
+				//				console.log(divY,e.clientY)
+				document.onmousemove = function(e) {
+					var e = e || window.event;
+					var T = e.clientY - divY;
+					if(T < 0) {
+						T = 0;
+					}
+					if(T > textBox.offsetHeight - scroll.offsetHeight) {
+						T = textBox.offsetHeight - scroll.offsetHeight;
+					}
+					scroll.style.top = T + 'px';
+					textscroll.style.top = scroll.offsetTop / (textBox.offsetHeight - scroll.offsetHeight) * -(textscroll.offsetHeight - textBox.offsetHeight) + 'px';
+					return false;
+				}
+				document.onmouseup = function() {
+					document.onmousemove = document.onmouseup = null;
+					if(this.releaseCapture) {
+						this.releaseCapture()
+					}
+				}
+				return false;
+			}
+			MouseScroll(textBox, function() {
+				var T = scroll.offsetTop + 10;
+				if(T > textBox.offsetHeight - scroll.offsetHeight) {
+					T = textBox.offsetHeight - scroll.offsetHeight;
+				}
+				scroll.style.top = T + 'px';
+				textscroll.style.top = scroll.offsetTop / (textBox.offsetHeight - scroll.offsetHeight) * -(textscroll.offsetHeight - textBox.offsetHeight) + 'px';
+			}, function() {
+				var T = scroll.offsetTop - 10;
+				if(T < 0) {
+					T = 0;
+				}
+				scroll.style.top = T + 'px';
+				textscroll.style.top = scroll.offsetTop / (textBox.offsetHeight - scroll.offsetHeight) * -(textscroll.offsetHeight - textBox.offsetHeight) + 'px';
+			}, function() {})
+		</script>
+	</body>
+
+</html>

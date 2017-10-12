@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>商品计算</title>
+		<link rel="stylesheet" type="text/css" href="style.css"/>
+	</head>
+	<body>
+		<div class="counterBox">
+			<div class="box">
+				<div class="commodity">
+					<span class="minus" >-</span><input type="text" value="0" class="comNum" disabled="disabled"/><span class="add" >+</span>
+					<span class="comMes">单价：12.5元 &nbsp;&nbsp;&nbsp; 小计：<span class="sum">0</span>元</span>
+				</div>
+				<div class="commodity">
+					<span class="minus" >-</span><input type="text" value="0" class="comNum" disabled="disabled"/><span class="add" >+</span>
+					<span class="comMes">单价：10.5元 &nbsp;&nbsp;&nbsp; 小计：<span class="sum">0</span>元</span>
+				</div>
+				<div class="commodity">
+					<span class="minus" >-</span><input type="text" value="0" class="comNum" disabled="disabled"/><span class="add" >+</span>
+					<span class="comMes">单价：8.5元 &nbsp;&nbsp;&nbsp; 小计：<span class="sum">0</span>元</span>
+				</div>
+				<div class="commodity">
+					<span class="minus" >-</span><input type="text" value="0" class="comNum" disabled="disabled"/><span class="add" >+</span>
+					<span class="comMes">单价：8元 &nbsp;&nbsp;&nbsp; 小计：<span class="sum">0</span>元</span>
+				</div>
+				<div class="commodity">
+					<span class="minus" >-</span><input type="text" value="0" class="comNum" disabled="disabled"/><span class="add" >+</span>
+					<span class="comMes">单价：14.5元 &nbsp;&nbsp;&nbsp; 小计：<span class="sum">0</span>元</span>
+				</div>
+			</div>
+			<div class="sumBox">
+				<div>
+					商品共合计：<input type="text" value="0" class="comNum" id="allSum" disabled="disabled"/>个  &nbsp; &nbsp;
+					共花费了：<input type="text" value="0" class="comNum" id="allMoney" disabled="disabled"/>元
+				</div>
+				<div>
+					其中最贵商品的单价是：<input type="text" value="0" class="comNum" id="maxExpensive" disabled="disabled"/>元
+				</div>
+			</div>
+		</div>
+		<script src="main.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>

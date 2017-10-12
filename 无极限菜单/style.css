@@ -1,0 +1,4 @@
+ul,li{list-style:none;}
+h2{font-weight:400;font-size: 14px;cursor: pointer;}
+#box ul ul {display: none;}
+#box ul ul.active{display: block;}

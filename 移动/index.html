@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div {
+				width: 100px;
+				height: 100px;
+				background: red;
+				position: absolute;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div></div>
+		<script type="text/javascript">
+			var div = document.getElementsByTagName('div')[0];
+
+			var LBtn = false;
+			var RBtn = false;
+			var TBtn = false;
+			var BBtn = false;
+			var Dclientwidth = document.documentElement.clientWidth;
+			var Dclientheight = document.documentElement.clientHeight;
+
+			document.onkeydown = function(e) {
+				
+				var e = e || window.event;
+				switch(e.keyCode) {
+					case 37:
+						LBtn = true;
+						break;
+					case 38:
+						TBtn = true;
+						break;
+					case 39:
+						RBtn = true;
+						break;
+					case 40:
+						BBtn = true;
+						break;
+				}
+			}
+			setInterval(function() {
+				if(LBtn) div.style.left = div.offsetLeft - 10 + 'px';
+				if(RBtn) div.style.left = div.offsetLeft + 10 + 'px';
+				if(TBtn) div.style.top = div.offsetTop - 10 + 'px';
+				if(BBtn) div.style.top = div.offsetTop + 10 + 'px';
+				if(div.offsetLeft<0)  div.style.left = '0px';
+				if(div.offsetTop<0)  div.style.top = '0px';
+				if(div.offsetLeft>Dclientwidth- div.offsetWidth)  div.style.left = Dclientwidth- div.offsetWidth+ 'px';
+				if(div.offsetTop>Dclientheight- div.offsetHeight)  div.style.top = Dclientheight- div.offsetHeight + 'px';
+			}, 10)
+
+			document.onkeyup = function(e) {
+				var e = e || window.event;
+				switch(e.keyCode) {
+					case 37:
+						LBtn = false;
+						break;
+					case 38:
+						TBtn = false;
+						break;
+					case 39:
+						RBtn = false;
+						break;
+					case 40:
+						BBtn = false;
+						break;
+				}
+			}
+		</script>
+	</body>
+
+</html>

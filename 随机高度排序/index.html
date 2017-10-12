@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{background: red;margin: 5px 0px;}
+			
+		</style>
+	</head>
+	<body>
+		<div style="height: 2px;"></div>
+		<div style="height: 12px;"></div>
+		<div style="height: 43px;"></div>
+		<div style="height: 11px;"></div>
+		<div style="height: 6px;"></div>
+		<div style="height: 46px;"></div>
+		<div style="height: 75px;"></div>
+		<div style="height: 86px;"></div>
+		<div style="height: 22px;"></div>
+		<div style="height: 5px;"></div>
+		<div style="height: 33px;"></div>
+		<div style="height: 67px;"></div>
+		<script type="text/javascript">
+			function getcss(obj,attr) {
+				return obj.currentStyle?obj.currentStyle[attr]:getComputedStyle(obj)[attr];
+			}
+			var dives = document.getElementsByTagName('div');
+			var earr = [];
+			for (var i=0;i<dives.length;i++) {
+				earr.push(dives[i]);
+			}
+			earr.sort(function (a,b) {
+				var h1 = parseInt(getcss(a,'height'));
+				var h2 = parseInt(getcss(b,'height'));
+				return h1-h2;
+			})
+			document.body.innerHTML = '';
+			for (var i=0;i<earr.length;i++) {
+				document.body.innerHTML += earr[i].outerHTML;
+			}
+		</script>
+	</body>
+	
+</html>

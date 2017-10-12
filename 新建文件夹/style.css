@@ -1,0 +1,19 @@
+*{margin: 0;padding: 0;}
+body{background: #627ab1;}
+.container{width: 600px;margin: 100px auto;}
+.logo{text-align: center;}
+#fileBox{margin-top: 20px;min-height: 300px;}
+.file{padding: 15px;display: inline-block;width: 100px;border: 1px solid transparent;border-radius: 10px;position: relative;margin-bottom: 20px;margin-left: 15px;}
+.file img{width: 100px;}
+.file p{text-align: center;color: #fff;}
+.file:hover{background: rgba(0,0,0,0.3);}
+.file:hover span{display: block;}
+.file span{position: absolute;width: 12px;height: 12px;background: #fff;display: inline-block;left: 5px;top: 5px;display: none;}
+.file span.cur{background: url(img/check.png) no-repeat #fff;}
+.file.cur{background: rgba(0,0,0,0.3);}
+.file.cur span{display: block;}
+
+.btnBox{margin-top: 20px;}
+.btnBox input{text-align: center;display: block;width:100px;padding: 5px 0px;border-radius: 10px;border: 1px solid #fff;outline: none;margin: 0 auto;margin-bottom: 10px;cursor: pointer;}
+.btnBox input#newFile {background: rgba(255,255,255,0.3);color: #fff;}
+.btnBox input#delFile{background: rgba(255,255,255,1);color: #000;}

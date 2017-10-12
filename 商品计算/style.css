@@ -1,0 +1,11 @@
+*{margin: 0;padding: 0;}
+body{background: #e7aabf; font-family: "microsoft yahei";}
+.counterBox{background: url(img/bg.png) no-repeat center center;width: 450px;height: 560px;margin: 50px auto;padding: 20px 50px;}
+.box{padding: 130px 30px 0px 30px;}
+.box .commodity{margin-bottom: 20px;}
+.box .commodity span.minus,.box .commodity span.add{user-select:none;display: inline-block;width: 40px;height: 35px;line-height: 35px;text-align: center;color: #fff;font-size: 26px;font-weight: bold;border: 1px solid #dedede;border-radius: 5px;vertical-align: middle;cursor: pointer;-webkit-user-select: none;-moz-user-select: none;}
+.comNum{width: 40px;height: 35px;outline: none;text-align: center;margin: 0px 10px;border-radius: 5px;border: none;vertical-align: middle;background: #fff;}
+.box .commodity .comMes{width: 215px;height: 35px;background: #171717;font-size: 14px;color: #858685;display: inline-block;vertical-align: middle;margin-left: 20px;line-height: 35px;text-indent: 10px;border-radius: 5px;}
+.sumBox{padding: 20px 30px 0px 30px;font-size: 14px;}
+.sumBox div{color: #858685;margin-top: 20px;letter-spacing: 2px;}
+#allMoney{width: 60px;}

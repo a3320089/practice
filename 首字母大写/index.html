@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div class="text">
+			are you ok?
+		</div>
+		
+		<script type="text/javascript">
+			var str = document.getElementsByClassName('text')[0].innerHTML;
+			str = str.trim();
+			var arr;
+			arr = str.split(' ');
+			var str1;
+			for(var i=0;i<arr.length;i++){
+				str1 = arr[i].charAt(0).toUpperCase() + arr[i].slice(1);
+				arr[i] = str1;
+			}
+			document.getElementsByClassName('text')[0].innerHTML = arr.join(' ');
+		</script>
+	</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#dlap{width: 100px;height: 100px;background: red;position: absolute;}
+		</style>
+	</head>
+	<body>
+	<div id="dlap">
+		
+	</div>
+	<script type="text/javascript">
+		
+		window.onload=function() {
+			var d1 = new dlap();
+			d1.init('dlap')
+		}
+		function dlap () {
+			this.oDiv = null;
+			this.divX = null;
+			this.divY = null;
+		}
+		dlap.prototype.init = function(id) {
+			this.oDiv = document.getElementById(id);
+			var _this = this;
+			this.oDiv.onmousedown = function (e) {
+				var e = e||window.event;
+				_this.divX = e.clientX - _this.oDiv.offsetLeft;
+				_this.divY = e.clientY - _this.oDiv.offsetTop;
+				_this.down();
+				return false;
+			}
+		}
+		dlap.prototype.down = function () {
+			var _this = this;
+			document.onmousemove = function () {
+				_this.move();
+			}
+			document.onmouseup = function () {
+				_this.up();
+			}
+		}
+		
+		dlap.prototype.move = function (e) {
+			var e = e||window.event;
+			this.oDiv.style.left = e.clientX - this.divX + 'px';
+			this.oDiv.style.top = e.clientY - this.divY + 'px';
+		}
+		dlap.prototype.up = function () {
+			document.onmouseup = document.onmousemove = null;
+		}
+	</script>
+	</body>
+</html>

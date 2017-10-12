@@ -1,0 +1,10 @@
+*{margin: 0;padding: 0;}
+body{font-family: "microsoft yahei";font-size: 12px;background: #5c4a99;}
+.container{width: 800px;margin: 100px auto;}
+.btn{text-align: center;}
+.btn span{display: inline-block;background: #bcbada;border: 1px solid #bcbada;width: 100px;text-align: center;border-radius: 20px;line-height: 30px;margin: 10px;cursor: pointer;-moz-user-select: none;-ms-user-select: none;-webkit-user-select: none;}
+.btn span.cur{background: #2d2748;color: #fff;border: 1px solid #bcbada;}
+.title{text-align: center;color: #fff;font-size: 25px;line-height: 50px;}
+#content {margin-top: 30px;font-size: 0;}
+#content div{position: relative;display: inline-block;width: 150px;height: 150px;line-height: 150px;border-radius: 10px;color: #fff;text-align: center;font-size: 25px;margin: 25px;}
+#content div span{position: absolute;background: #fff;display: block;border-radius: 20px;width: 80px;text-align: center;line-height: 25px;z-index: 1;height: 25px;color: #000;bottom: -10px;left: 35px;font-size: 12px;}
