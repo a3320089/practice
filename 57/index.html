@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body{font-family: "microsoft yahei";}
+			#box {
+				border: 1px solid #00A4FF;
+				padding: 20px;
+				margin: 100px auto;
+				width: 300px;
+				text-align: center;
+			}
+			
+			#box .item {
+				margin: 10px 0px;
+			}
+			
+			#box .item input {
+				border: 1px solid #00A4FF;
+				margin-left: 10px;
+				border-radius: 10px;
+				line-height: 30px;
+				outline: none;
+				text-indent: 10px;
+				width: 150px;
+				font-size: 14px;
+			}
+			
+			#box .item input.err {
+				border: 1px solid red;
+			}
+			
+			#box .item span {
+				width: 70px;
+				display: inline-block;
+				text-align: left;
+			}
+			
+			#box button {
+				width: 100px;
+				border-radius: 10px;
+				background: #00A4FF;
+				border: none;
+				color: #fff;
+				line-height: 30px;
+				cursor: pointer;
+				outline: none;
+				margin-top: 10px;
+				font-size: 14px;
+			}
+			
+			#box button.err {
+				cursor: no-drop;
+				background: #0066FF;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="box">
+			<div class="item">
+				<span>邮箱</span>
+				<input type="text" name="mail" id="mail" />
+			</div>
+			<div class="item">
+				<span>手机</span>
+				<input type="text" name="phone" id="phone" />
+			</div>
+			<div class="item">
+				<span>QQ</span>
+				<input type="text" name="qq" id="qq" />
+			</div>
+			<div class="item">
+				<span>出生日期</span>
+				<input type="text" name="date" id="date" />
+			</div>
+			<button class="err">提交</button>
+		</div>
+
+		<script type="text/javascript">
+			//获取所有输入框
+			var ipt = document.getElementById("box").getElementsByTagName('input');
+			//获取提交按钮
+			var btn = document.getElementById("box").getElementsByTagName('button')[0];
+			//验证邮箱，手机，QQ的正则数组
+			var reArr = [/^\w+@[A-Za-z0-9]+\.[a-z]{2,3}$/, /^1[34578]\d{9}$/, /^[1-9]\d{5,9}$/];
+			//获取现在的日子
+			var nowDate = new Date();
+			var year = nowDate.getFullYear();
+//			var month = nowDate.getMonth() + 1;
+//			var day = nowDate.getDate();
+
+			for(var i = 0; i < ipt.length; i++) {
+				ipt[i].index = i;
+				//设置err用来验证是否通过验证，默认出错
+				ipt[i].err = true;
+				//给前面3个添加验证事件
+				if(i < ipt.length - 1) {
+					ipt[i].oninput = function() {
+						var re = reArr[this.index];
+						if(re.test(this.value)) {
+							this.className = '';
+							this.err = false;
+						} else {
+							this.className = 'err';
+							this.err = true;
+						}
+						checkCansumit()
+					}
+				} else {
+					//日期的验证
+					ipt[i].oninput = function() {
+						//数组用来存放分割后的年月日
+						var arr = [];
+						//只能根据 2017-5-5这种格式输入。年月日中间的分割符可以任意字符
+						this.value.replace(/^(\d+)[^\d](\d+)[^\d](\d+)[^\d]?$/g,function ($0,$1,$2,$3) {
+							arr.push($1);
+							arr.push($2);
+							arr.push($3);
+						});
+						if(arr) {
+							//判断分割出来的数组长度为3，年不能小于现在的100年，月的范围在1-12月
+							if(arr.length == 3 && arr[0] > year - 100 && (arr[1] > 0 && arr[1] < 13)) {
+								//根据分割来的年月日设置日期，月份加1，然后设置日期为0.即可获取当月有多少天
+								var sDate = new Date(arr[0], arr[1]);
+								sDate.setDate(0);
+								//获取当月有多少天
+								var d = sDate.getDate();
+								//设置年月日
+								sDate = new Date(arr[0], arr[1] - 1, arr[2]);
+								//判断日期在范围内，且时间不能超过今天
+								if(arr[2] > 0 && arr[2] <= d && sDate.getTime() < nowDate.getTime()) {
+									this.className = '';
+									this.err = false;
+								} else {
+									this.className = 'err';
+									this.err = true;
+								}
+							} else {
+								this.className = 'err';
+								this.err = true;
+							}
+							checkCansumit()
+						}
+
+					}
+				}
+
+				//失去焦点
+				ipt[i].onblur = function() {
+					if(this.value == '') {
+						this.className = '';
+					}
+					checkCansumit()
+				}
+
+			}
+
+			//检查是否全部通过
+			function checkCansumit() {
+				btn.className = '';
+				for(var i = 0; i < ipt.length; i++) {
+					if(ipt[i].err) {
+						btn.className = 'err';
+					}
+				}
+			}
+		</script>
+	</body>
+
+</html>

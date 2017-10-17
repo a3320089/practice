@@ -3,7 +3,7 @@ div.d{margin: 0;padding: 0px;margin-left: -1;width: 50px;height: 50px;text-align
 div.d:hover{color: red;border:1px solid red;border-radius: 50%;}
 .red{color: red;}
 .box{width: 364px;float: left;margin-right: 20px;}
-.box div.none{width: 52px;height: 52px;float: left;}
+.box div.none{width: 50px;height: 50px;float: left;border: 1px solid transparent;}
 .calendar{width: 364px;margin: 100px auto;border: 1px solid #dedede;padding: 20px;overflow: hidden;}
 .calendar span{display: inline-block;}
 .change{float: right;}
