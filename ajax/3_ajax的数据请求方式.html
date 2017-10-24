@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .ok {
+            border: 1px solid green;
+        }
+        
+        .error {
+            border: 1px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="php/get.php" method="get">
+        姓名:
+        <input type="text" name="user" id="userId" /> 密码:
+        <input type="password" name="password" />
+        <input type="button" value="提交">
+    </form>
+    <script src="ajax.js"></script>
+    <script type="text/javascript">
+        const userId = document.getElementById('userId');
+        userId.onblur = function() {
+            ajax({
+                url: "php/data.xml",
+                data: {
+                    user: userId.value
+                },
+                method: "post",
+                dataType: "xml",
+                success: function(data) {
+                    console.log(data);
+                }
+            })
+        }
+    </script>
+
+</body>
+
+</html>

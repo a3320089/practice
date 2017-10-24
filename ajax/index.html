@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="ajax.js"></script>
+</head>
+
+<body>
+    <input type="text" id="userName" name="user"><input type="button" value="查询" id="btn">
+    <div id="info"></div>
+    <script>
+        var userName = document.getElementById("userName");
+        var btn = document.getElementById("btn");
+        var info = document.getElementById("info");
+        btn.onclick = function() {
+            ajax({
+                url: "php/ajax.php",
+                data: {
+                    user: encodeURI(userName.value)
+                },
+                dataType: "json",
+                success: function(data) {
+                    if (data.code == 1) {
+                        info.innerHTML = data.data;
+                    } else if (data.code == 0) {
+                        info.innerHTML = "名字：" + data.data.name + "年龄：" + data.data.age + "习惯" + data.data.hobby + "说" + data.data.info;
+                    }
+                }
+            })
+        }
+    </script>
+</body>
+
+</html>
