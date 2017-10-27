@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="jsonp.js"></script>
+</head>
+
+<body>
+    <ul>
+
+    </ul>
+    <script>
+        var liw = 222;
+        var interval = 20;
+        var viewLiw = liw + interval;
+        var arrL = [];
+        var arrT = [];
+        var len = Math.floor(window.innerWidth / viewLiw);
+        var num = -1;
+
+        var onoff = true;
+
+        var ul = document.getElementsByTagName("ul")[0];
+        
+
+
+        random(); 
+        reset();
+
+        function reset() {
+            len = Math.floor(window.innerWidth / viewLiw);
+            arrL = [];
+            arrT = [];
+            for (var i = 0; i < len; i++) {
+                arrL[i] = i * viewLiw;
+                arrT[i] = 0;
+            }
+            ul.style.width = len * viewLiw - interval + 'px';
+        }
+
+        function random() {
+            if (!onoff) return;
+            onoff = false;
+            jsonp({
+                url: "http://www.wookmark.com/api/json/popular",
+                data: {
+                    page: ++num
+                },
+                callback: "callback",
+                success: function (data) {
+                    data.forEach(function (e, i) {
+                        var li = document.createElement("li");
+                        var img = document.createElement("img");
+                        img.src = e.preview;
+                        img.onload = function () {
+                            li.appendChild(img);
+                            li.style.cssText =
+                                `left:${arrL[findMin()]}px;top:${arrT[findMin()]}px`;
+                            ul.appendChild(li);
+                            arrT[findMin()] += (li.offsetHeight + 20);
+                        }
+                    });
+                    onoff = true;
+                }
+            })
+        }
+
+        window.onscroll = function () {
+            // console.log(arrT[findMin()], document.body.scrollHeight)
+            if (arrT[findMin()] <= document.body.scrollHeight) {
+                random()
+            }
+        }
+
+        window.onresize = function () {
+            var olen = len;
+            var lis = ul.getElementsByTagName("li");
+            reset();
+            if(len == olen)return;
+            for(var i = 0;i<lis.length;i++){
+                lis[i].style.cssText = `left:${arrL[findMin()]}px;top:${arrT[findMin()]}px`;
+                arrT[findMin()] += (lis[i].offsetHeight + 20);
+            }
+        }
+
+        function findMin() {
+            var min = Math.min.apply('', arrT);
+            return arrT.findIndex(e => e == min);
+        }
+    </script>
+</body>
+
+</html>

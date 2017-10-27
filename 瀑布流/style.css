@@ -1,0 +1,5 @@
+* {margin: 0;padding: 0}
+ul{display: block;margin: 0 auto;position: relative;}
+ul,li{list-style: none}
+li{width: 200px;padding: 10px;border: 1px solid #dedede;box-shadow: 5px 5px 5px #dedede;position: absolute;transition: .5s}
+img{width: 100%}
