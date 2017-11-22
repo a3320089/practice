@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>todos</title>
+    <link rel="stylesheet" type="text/css" href="css/base.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <script src="../../vue.js"></script>
+</head>
+
+<body>
+    <section class="todoapp">
+        <div>
+            <header class="header" >
+                <h1>todos</h1>
+                <input class="new-todo" placeholder="请输入内容" v-model="iptValue" @keydown.enter="add"/>
+            </header>
+            <section class="main">
+                <input class="toggle-all" type="checkbox" v-model="isAllCheck" v-show="todoList.length!=0"/>
+                <ul class="todo-list">
+                    <!-- <li class="completed editing">
+                        <div class="view">
+                            <input class="toggle" type="checkbox" />
+                            <label>miaoweiketang</label>
+                            <button class="destroy"></button>
+                        </div>
+                        <input class="edit" />
+                    </li> -->
+                    <li :class="{completed:item.isCheck,editing:editIndex==index}" v-for="(item,index) in showList" >
+                        <div class="view">
+                            <input class="toggle" type="checkbox" v-model="item.isCheck"/>
+                            <label @dblclick="edit(index)">{{item.title}}</label>
+                            <button class="destroy" @click="del(index)"></button>
+                        </div>
+                        <input class="edit" v-model="item.title" @keydown.enter="endEdit" @blur="endEdit"/>
+                    </li>
+                    <!-- <li class="completed">
+                        <div class="view">
+                            <input class="toggle" type="checkbox" />
+                            <label>miaoweiketang</label>
+                            <button class="destroy"></button>
+                        </div>
+                        <input class="edit" />
+                    </li> -->
+                </ul>
+            </section>
+            <footer class="footer" v-show="todoList.length!=0">
+	            <span class="todo-count">
+	            	<strong>{{checkNum}}</strong>
+	            	<span>条未选中</span>
+	            </span>
+	            <ul class="filters">
+	            	<li><a href="#/all" :class="{selected:hash=='all'}" @click="changeList('all')">All</a></li> 
+	            	<li><a href="#/active" :class="{selected:hash=='active'}" @click="changeList('active')">Active</a></li> 
+	            	<li><a href="#/completed" :class="{selected:hash=='completed'}" @click="changeList('completed')">Completed</a></li>
+	           	</ul>
+            </footer>
+        </div>
+    </section>
+</body>
+<script>
+	/*
+		1. 增删改查数据，要使用localStorage做数据持久化
+		2. 根据hash不同，过滤渲染的数据
+			a. 全部任务
+			b. 完成的任务
+			c. 未完成的任务
+		3. 自己设计数据结构
+			
+	*/
+    let hash = window.location.hash.slice(2);
+    if(!hash)hash="all";
+    let listArr = JSON.parse(localStorage.getItem("arr"));
+    new Vue({
+        el:".todoapp",
+        data:{
+            iptValue:"",
+            allTodo:[],
+            todoList:listArr,
+            editIndex:-1,
+            hash
+        },
+        methods:{
+            add(){
+                this.todoList.push({title:this.iptValue,isCheck:false})
+                this.iptValue = "";
+            },
+            del(i){
+                this.todoList.splice(i,1);
+            },
+            edit(i){
+                this.editIndex = i;
+            },
+            endEdit(){
+                this.editIndex = -1;
+            },
+            changeList(val){
+                this.hash = val;
+            }
+        },
+        computed:{
+            isAllCheck:{
+                get(){
+                    localStorage.setItem("arr",JSON.stringify(this.todoList));
+                    let arr = this.todoList.filter((e)=>{
+                    return e.isCheck;
+                    })
+                    return this.todoList.length == arr.length;
+                },
+                set(newValue){
+                    this.todoList.forEach((e)=>{
+                        e.isCheck = newValue;
+                    })
+                }
+            },
+            checkNum(){
+                return this.todoList.filter((e)=>!e.isCheck).length;
+            },
+            showList:{
+                get(){
+                    switch (this.hash) {
+                        case "active":
+                            return this.todoList.filter(e=>!e.isCheck);
+                            break;
+                        case "completed":
+                            return this.todoList.filter(e=>e.isCheck);
+                            break;
+                        default:
+                            return this.todoList;
+                            break;
+                    }
+                }
+            }
+        }
+    })
+</script>
+
+</html>
